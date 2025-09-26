@@ -40,6 +40,15 @@ const HomePage = () => {
     fetchRecipesData();
   }, [searchQuery, selectedCategory]);
 
+  React.useEffect(() => {
+    const resetHandler = () => {
+      setSearchQuery('');
+      setSelectedCategory('');
+    };
+    window.addEventListener('resetHomePage', resetHandler);
+    return () => window.removeEventListener('resetHomePage', resetHandler);
+  }, []);
+
   useEffect(() => {
     const fetchCategories = async () => {
       try {
