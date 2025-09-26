@@ -27,4 +27,5 @@ This project was developed as part of a MERN stack course. The primary goal is t
 1. Project setup with Vite, React, and TailwindCSS.
 2. Set up basic layout, pages, and routing structure.
 3. Fetch and display recipes on homepage.
-4. Implement recipe details page with data fetching
+4. Implement recipe details page with data fetching.
+5. Implement search functionality on homepage.
