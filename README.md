@@ -25,3 +25,5 @@ This project was developed as part of a MERN stack course. The primary goal is t
 ## Planning and Implementation
 
 1. Project setup with Vite, React, and TailwindCSS.
+2. Set up basic layout, pages, and routing structure.
+3. 
