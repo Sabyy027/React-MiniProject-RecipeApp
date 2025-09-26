@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div>
+    
       <header className="bg-slate-800 text-white shadow-lg">
-        <div>
+        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
             <Link to="/" className="text-2xl font-bold text-yellow-400 hover:text-yellow-300">
                 RecipeFinder
             </Link>
@@ -14,7 +14,7 @@ const Header = () => {
         </div>
 
       </header>
-    </div>
+    
   )
 }
 

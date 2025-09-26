@@ -3,11 +3,16 @@ import RecipeCard from "../components/RecipeCard";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
+import Spinner from "../components/Spinner";
+import FilterDropdown from '../components/FilterDropdown';
+
 
 const HomePage = () => {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
+  const [categories, setCategories] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('');
 
   const fetchRecipes = useCallback(async () => {
     try {
@@ -28,19 +33,51 @@ const HomePage = () => {
     fetchRecipes();
   }, [fetchRecipes]);
 
+    useEffect(() => {
+  const fetchCategories = async () => {
+    try {
+      const response = await axios.get('https://www.themealdb.com/api/json/v1/1/list.php?c=list');
+      setCategories(response.data.meals || []);
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+    }
+  };
+  
+  fetchCategories();
+}, []);
+
+const handleCategoryChange = (category) => {
+  setSelectedCategory(category);
+};
+
+const filteredRecipes = recipes.filter(recipe => {
+  if (!selectedCategory) {
+    return true;
+  }
+  return recipe.strCategory === selectedCategory;
+});
+
+
   if (loading) {
-    return <div className="text-center text-xl">Loading...</div>;
+    return <Spinner />;
   }
   const handleSearch = (query) => {
     setSearchQuery(query);
   };
+
+
 
   return (
     <div>
       <h1 className="text-4xl font-bold mb-4 text-center">Discover Recipes</h1>
       <p className="text-center text-gray-400 mb-8">Find your next favorite meal from our extensive collection.</p>
       
-      <SearchBar onSearch={handleSearch} /> {/* 5. Render the SearchBar */}
+      <SearchBar onSearch={handleSearch} /> 
+      <FilterDropdown 
+      categories={categories}
+      selectedCategory={selectedCategory}
+      onSelectCategory={handleCategoryChange}
+    />
 
       {loading ? (
         <div className="text-center text-xl">Loading recipes...</div>

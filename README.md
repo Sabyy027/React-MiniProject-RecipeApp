@@ -29,3 +29,4 @@ This project was developed as part of a MERN stack course. The primary goal is t
 3. Fetch and display recipes on homepage.
 4. Implement recipe details page with data fetching.
 5. Implement search functionality on homepage.
+6. Implement favorites system using Context API and localStorage.

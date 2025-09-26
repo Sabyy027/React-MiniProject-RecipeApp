@@ -2,6 +2,7 @@ import React, { useState, useEffect, use } from 'react'
 import { useParams, Links } from 'react-router-dom'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import Spinner from '../components/Spinner'
 
 const RecipeDetailPage = () => {
   const { id } = useParams();
@@ -36,7 +37,7 @@ const RecipeDetailPage = () => {
     return ingredients;
   };
 
-  if (loading) return <div className="text-center text-xl">Loading...</div>;
+  if (loading) return <Spinner />;
   if (!recipe) return <div className="text-center text-xl">Recipe not found!</div>;
   
   const ingredients = getIngredients(recipe);

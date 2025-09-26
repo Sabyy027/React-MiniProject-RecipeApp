@@ -15,7 +15,7 @@ const RecipeCard = ({ recipe }) => {
   };
 
   return (
-    <div className="bg-slate-800 rounded-lg overflow-hidden shadow-lg hover:shadow-yellow-400/50 transition-shadow duration-300 relative">
+    <div className="bg-slate-800 rounded-lg overflow-hidden shadow-lg hover:shadow-yellow-400/50 transition-all duration-300 relative hover:scale-105">
       
       <button
         onClick={handleFavoriteClick}
