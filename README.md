@@ -2,7 +2,7 @@
 
 A dynamic and themed recipe application built with React. Users can browse, search, filter, and save their favorite recipes, all fetched from TheMealDB API. This project was built to demonstrate a strong understanding of modern front-end development practices.
 
-**Live Site URL:** [**Add Your Deployed Netlify URL Here**]
+**Live Site URL:** https://recipe-finder-project-app.netlify.app
 
 
 
