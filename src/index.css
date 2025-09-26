@@ -1,1 +1,16 @@
+
 @import "tailwindcss";
+
+body, html {
+	font-family: 'Quicksand', 'Comic Neue', 'Tilt Neon', sans-serif;
+}
+
+.font-comic {
+	font-family: 'Comic Neue', cursive;
+}
+.font-quicksand {
+	font-family: 'Quicksand', sans-serif;
+}
+.font-tilt {
+	font-family: 'Tilt Neon', sans-serif;
+}

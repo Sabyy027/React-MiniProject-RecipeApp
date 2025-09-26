@@ -6,7 +6,7 @@ import Header from './Header'
 
 const Layout = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-slate-900 text-white">
+  <div className="flex flex-col min-h-screen bg-slate-900 text-white font-quicksand">
         <Header />
         <main className="flex-grow container mx-auto px-4 py-8">
             <Outlet />
