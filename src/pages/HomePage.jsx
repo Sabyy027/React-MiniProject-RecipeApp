@@ -1,7 +1,7 @@
-
 import React, {useState, useEffect} from 'react'
 import RecipeCard from '../components/RecipeCard'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const HomePage = () => {
   const [recipes, setRecipes] = useState([])
@@ -32,7 +32,9 @@ const HomePage = () => {
       <h1 className="text-4xl font-bold mb-8 text-center">Discover Recipes</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {recipes.map(recipe => (
-          <RecipeCard key={recipe.idMeal} recipe={recipe} />
+          <Link to={`/recipe/${recipe.idMeal}`} key={recipe.idMeal}>
+          <RecipeCard recipe={recipe} />
+          </Link>
         ))}
       </div>
     </div>
